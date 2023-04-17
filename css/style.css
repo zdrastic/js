@@ -81,12 +81,16 @@ h1, h2, h3, h4, h5, h6 {
 .header {
   width: 100%;
   min-height: 10%;
+  height: 10%;
   flex: 0 0 auto;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
   background-color: pink;
+}
+.header.header__hidden {
+  display: none;
 }
 
 .burger__menu {
@@ -99,7 +103,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .burger__menu-button {
-  display: none;
   width: 30px;
   height: 30px;
   position: fixed;
@@ -121,18 +124,44 @@ h1, h2, h3, h4, h5, h6 {
   position: fixed;
   justify-content: space-evenly;
   align-items: center;
-  left: 8%;
-  top: 2%;
-  width: 120px;
-  height: 200px;
+  left: 0%;
+  top: 0%;
+  width: 30vw;
+  height: 100vh;
   background-color: lightcoral;
-  transition: position 2s;
-  border-top-right-radius: 10%;
-  border-bottom-right-radius: 10%;
-  box-shadow: 5px 5px lightpink;
+  -webkit-animation: 1s show ease;
+          animation: 1s show ease;
+  box-shadow: 5px 5px pink;
+}
+@-webkit-keyframes show {
+  from {
+    left: -30vw;
+  }
+  to {
+    left: 0;
+  }
+}
+@keyframes show {
+  from {
+    left: -30vw;
+  }
+  to {
+    left: 0;
+  }
 }
 .burger__menu-dropdown .a {
   text-decoration: none;
+}
+
+.burger__menu-dropdown-shadow {
+  display: none;
+  position: fixed;
+  right: 0%;
+  width: 70vw;
+  height: 100vw;
+}
+.burger__menu-dropdown-shadow.visible {
+  display: block;
 }
 
 .burger__menu-nav {
