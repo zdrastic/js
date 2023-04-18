@@ -46,24 +46,30 @@
 }
 
 .burger__menu-dropdown {
-	display: none;
+	position: fixed;
+	top: 0;
+	left: -30vw;
+	display: flex;
+	flex-direction: column;
+	position: fixed;
+	justify-content: space-evenly;
+	align-items: center;
+	transition: 1s cubic-bezier(.29, 1.01, 1, -0.68);
+	width: 30vw;
+	height: 100vh;
+	background-color: lightcoral;
+	box-shadow: 5px 5px pink;
 	&.activeDropDown {
-		display: flex;
-		flex-direction: column;
-		position: fixed;
-		justify-content: space-evenly;
-		align-items: center;
 		left: 0%;
 		top: 0%;
-		width: 30vw;
-		height: 100vh;
-		background-color: lightcoral;
-		animation: 1s show ease;
-		box-shadow: 5px 5px pink;
 	}
 	@keyframes show {
 		from { left: -30vw; }
 		to { left: 0; }
+	 }
+	 @keyframes hide {
+		from { left: 0; }
+		to { left: -30vw; }
 	 }
 	.a {
 		text-decoration: none;
